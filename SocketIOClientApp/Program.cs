@@ -10,9 +10,11 @@ namespace SocketIOClientApp
     {
         private static SocketIO socket;
         private static DummyTask dummyTask;
-        private static string connectionUrl = "http://localhost:8089";
+        private static string connectionUrl;
         static void Main(string[] args)
         {
+            Console.WriteLine("Enter socketio server address (in http(s)://ipAddress:port form)");
+            connectionUrl = Console.ReadLine();
             Console.WriteLine("Hello World!");
             dummyTask = new DummyTask();
             dummyTask.FileReadEvent += File_OnRead;
